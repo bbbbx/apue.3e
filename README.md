@@ -7,3 +7,27 @@ The source code for the examples shown in this book is available at book’s Web
 modem communication: 
 - PostScript: [http://www.apuebook.com/lostchapter/modem.ps](http://www.apuebook.com/lostchapter/modem.ps)
 - PDF [http://www.apuebook.com/lostchapter/modem.pdf](http://www.apuebook.com/lostchapter/modem.pdf)
+
+## Processing
+
+1. - [x] UNIX System Overview
+2. - [x] UNIX Standardization and Implementations
+3. - [x] File I/O
+4. - [ ] Files and Directories
+5. - [ ] Standard I/O Library
+6. - [ ] System Data Files and Information
+7. - [ ] Process Environment
+8. - [ ] Process Control
+9. - [ ] Process Relationships
+10. - [ ] Signals
+11. - [ ] Threads
+12. - [ ] Thread Control
+13. - [ ] Daemon Processes
+14. - [ ] Advanced I/O
+15. - [ ] Interprocess Communication
+16. - [ ] Network IPC: Sockets
+17. - [ ] Advanced IPC
+18. - [ ] Terminal I/O
+19. - [ ] Pseudo Terminals
+20. - [ ] A Database Library
+21. - [ ] Communicating with a Network Printer

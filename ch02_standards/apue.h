@@ -38,6 +38,8 @@ typedef void Sigfunc(int); /* for signal handlers */
 /**
  * 我们自己的函数的原型
  */
+char* path_alloc(size_t *);      /* 图 2.16 */
+
 void err_quit(const char *, ...) __attribute__((noreturn));
 void err_ret(const char *, ...);
 void err_sys(const char *, ...) __attribute__((noreturn));
