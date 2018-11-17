@@ -88,3 +88,17 @@ struct stat {
     - 分区
 
 其中同一个一个 i-node 可以指向多个 data block，多个 directory block 中的 i-node number 可以指向同一个 i-node。上面这种格式的文件系统与传统的 UNIX 文件系统很相似，[Bach, M. J. 1986 *The Design of the UNIX Operating System*] 的第 4 章详细地描述了传统的 UNIX 文件系统。
+
+### chdir, fchdir, and getcwd Functions
+
+每个进程都有一个 current working directory。该目录总是 relative pathnames 的起始目录（不以斜杆开始的 pathname 称为 relative pathname）。当用户登录 UNIX system 时，current working directory 通常是用户的 home directory（在 `/etc/passwd` 文件的第六个字段中）。而 current working directory 是进程的一个属性，home directory 是 login name 的一个属性。
+
+### Device Special Files
+
+每个 file system 都有它的主设备号和次设备号，这些设备号都被 encode 在原始的系统数据类型 `dev_t` 中。主设备号用来标识 device driver，次设备号用来标识特定的 subdevice。一个 disk drive 通常包括几个 file system，在同个 disk drive 上的每个 file system 通常都有相同的主设备号，但它们的此设备号不同。
+
+我们可以通过两个 macros：`major` 和 `minor` 来访问主设备号和次设备号。
+
+每个 filename 的 `st_dev` 值是 file system 的 device number，它包含了主设备号和此设备号。在 FreeBSD 8.0 和 Mac OS X 10.6.8 中使用了一个 32-bit integer 来表示 `dev_t` 数据类型，其中 8 bit 是主设备号，24 bit 是此设备号。Linux 上的 `dev_t` 是 64 bit 的，但其中只有 12 位用来表示主设备号，20 位用来表示此设备号。
+
+只有 character special files 和 block special files 才有 `st_rdev` 值，它是 actual device 的 device number。
