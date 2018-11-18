@@ -14,8 +14,8 @@ modem communication:
 2. - [x] UNIX Standardization and Implementations
 3. - [x] File I/O
 4. - [x] Files and Directories
-5. - [ ] Standard I/O Library
-6. - [ ] System Data Files and Information
+5. - [x] Standard I/O Library
+6. - [x] System Data Files and Information
 7. - [ ] Process Environment
 8. - [ ] Process Control
 9. - [ ] Process Relationships
