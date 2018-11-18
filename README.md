@@ -16,7 +16,7 @@ modem communication:
 4. - [x] Files and Directories
 5. - [x] Standard I/O Library
 6. - [x] System Data Files and Information
-7. - [ ] Process Environment
+7. - [x] Process Environment
 8. - [ ] Process Control
 9. - [ ] Process Relationships
 10. - [ ] Signals
