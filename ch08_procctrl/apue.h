@@ -49,6 +49,7 @@
    */
   char *path_alloc(size_t *);           /* 图 2.16*/
   void pr_exit(int);                    /* 图 8.5*/
+  int mysystem(char *);                 /* 没有 signal handling 的、自定义的 system */
 
   void err_msg(const char *, ...);
   void err_dump(const char *, ...) __attribute__((noreturn));

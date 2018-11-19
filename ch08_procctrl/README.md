@@ -252,3 +252,72 @@ int setegid(gid_t gid);
 其中 *pathname* 是绝对路径名。实际上，被内核执行的不是该 interpreter file，而是 interpreter file 第一行的 pathname 所指定的文件。一定要将 interpreter file（以 `#!` 开头的文本文件）和 interpreter（由 *pathname* 指定的文件）区分开来。
 
 ## `system` Function
+
+```c
+#include <stdlib.h>
+
+int system(char *cmdstring);
+```
+
+`system` 是通过调用 `fork`、`exec` 和 `waitpid` 来实现的，所以有 3 中返回值。
+
+## Process Accounting
+
+大多数 UNIX 系统都有一个选项来开启 process accounting。当开启这项功能的时候，每当有一个进程终止的时候，内核就会写入一个 accounting record。这些 accounting records 通常包括命令名、CPU 的使用时间、user ID 和 group ID、启动时间等等。
+
+可以使用 `acct` 函数来开启 process accounting。`accton` 命令就使用到了该函数，superuser 带有一个路径名执行 `accton` 命令可以开启 accounting。Accounting records 被写入到指定的文件当中，在 FreeBSD 和 Mac OS X 中，该文件是 `/var/account/acct`。
+
+## User Identification
+
+有时候我们想要找出运行该 program 的用户的 login name。`getlogin` 函数可以取到该 login name。
+
+```c
+#include <unistd.h>
+
+char *getlogin(void);  /* 出错则返回 NULL */
+```
+
+如果调用此函数的进程不是被 attached 在用户登录的 terminal 上时，则该函数可能会失败。我们通常称这些进程为 *daemons*。
+
+## Process Scheduling
+
+进程可以通过调整它的 “nice value”（通过调整它的 nice value 可以降低它对 CPU 的占用，所以该进程是 nice 的）来以一个较低的 priority 运行。
+
+SUS 中 nice 值的范围在 0 ~ `(2*NZERO)-1` 之间。nice 值越大，优先度越低。也就是说你越 nice，你的调度优先级就越低。`NZERO`（在 Mac OS X 10.4 中为 20） 是系统默认的 nice 值。
+
+进程可以通过 `nice` 函数来获取或更改它的 nice 值。
+
+```c
+#include <unistd.h>
+
+int nice(int incr);   /* 成功返回新的 nice 值，失败返回 -1 */
+```
+
+`getpriority` 除了可以获取一个进程的 nice 值外，还可以获取一组相关进程的 nice 值。
+
+```c
+#include <sys/resource.h>
+
+int getpriority(int which, id_t who);
+
+int setpriority(int which, id_t who, int value);
+```
+
+`nice` 系统调用源于早期 Research UNIX 系统的 PDP-11 版本。`getpriority` 和 `setpriority` 函数源于 4.2BSD。
+
+## Process Times
+
+进程可以调用 `times` 函数来获取它自己的或者 any terminated children 的 wall clock time、user CPU time 和 system CPU time。
+
+```c
+#include <sys/times.h>
+
+clock_t times(struct tms *buf);
+
+struct tms {
+  clock_t   tms_utime;    /* user CPU time */
+  clock_t   tms_stime;    /* system CPU time */
+  clock_t   tms_cutime;   /* user CPU time, terminated children */
+  clock_t   tms_cstime;   /* system CPU time, terminated children */
+};
+```
