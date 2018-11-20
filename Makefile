@@ -1,0 +1,2 @@
+sleep:
+	sleep 2
