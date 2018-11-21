@@ -51,6 +51,8 @@
   void pr_exit(int);                    /* 图 8.5*/
   int mysystem(char *);                 /* 没有 signal handling 的、自定义的 system */
 
+  void pr_mask(const char *);           /* 图 10.14 */
+
   void err_msg(const char *, ...);
   void err_dump(const char *, ...) __attribute__((noreturn));
   void err_quit(const char *, ...) __attribute__((noreturn));
