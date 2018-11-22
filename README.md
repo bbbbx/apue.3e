@@ -21,7 +21,7 @@ modem communication:
 9. - [x] Process Relationships
 10. - [x] Signals
 11. - [x] Threads
-12. - [ ] Thread Control
+12. - [x] Thread Control
 13. - [ ] Daemon Processes
 14. - [ ] Advanced I/O
 15. - [ ] Interprocess Communication
