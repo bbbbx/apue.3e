@@ -19,8 +19,8 @@ modem communication:
 7. - [x] Process Environment
 8. - [x] Process Control
 9. - [x] Process Relationships
-10. - [ ] Signals
-11. - [ ] Threads
+10. - [x] Signals
+11. - [x] Threads
 12. - [ ] Thread Control
 13. - [ ] Daemon Processes
 14. - [ ] Advanced I/O
