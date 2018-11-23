@@ -2,7 +2,7 @@
 
 Daemons 是一种运行时间比较长的进程。通常在系统 bootstrapped 之后就运行，且当系统 shut down 的时候才终止。Daemon 没有一个 controlling terminal，那 daemon 在出错的时候是如何 report error conditions 的呢？。
 
-<small>有关 *daemon* 这一术语是如何被应用到计算机系统中的历史背景，可以看 [Raymond 1996 *The New Hacker's Dictionary, Third Edition.* MIT Press, Cambridge, MA.]，这本书中说明了大量的 computer hacker 的术语</small>
+<small>有关 *daemon* 这一术语是如何被应用到计算机系统中的历史背景，可以看 [Raymond 1996 *The New Hacker's Dictionary, Third Edition.* MIT Press, Cambridge, MA.]，这本书中说明了大量的 computer hacker 的术语。</small>
 
 ## Daemon Characteristics
 
@@ -89,7 +89,8 @@ Daemon 不能将 error message 写到 standard error 中去，因为它没有  c
 + - - - - - - - - - - - - - - - - - - - - - - - - -+
 ```
 
-<small>上图使用 Graph-Easy 制作，命令如下：
+<small>
+上图使用 Graph-Easy 制作，命令如下：
 
 ```bash
 $ graph-easy <<< "[user process] - syslog -> [/dev/log]

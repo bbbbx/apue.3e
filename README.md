@@ -22,8 +22,8 @@ modem communication:
 10. - [x] Signals
 11. - [x] Threads
 12. - [x] Thread Control
-13. - [ ] Daemon Processes
-14. - [ ] Advanced I/O
+13. - [x] Daemon Processes
+14. - [x] Advanced I/O
 15. - [ ] Interprocess Communication
 16. - [ ] Network IPC: Sockets
 17. - [ ] Advanced IPC
