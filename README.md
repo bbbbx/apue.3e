@@ -30,4 +30,4 @@ modem communication:
 18. - [ ] Terminal I/O
 19. - [ ] Pseudo Terminals
 20. - [x] A Database Library
-21. - [ ] Communicating with a Network Printer
+21. - [x] Communicating with a Network Printer

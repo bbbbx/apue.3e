@@ -71,7 +71,7 @@ CPU 架构有 *big-endian* 的和 *little-endian* 的，大部分是 little-endi
 
 TCP/IP protocol suite 使用的是 big-endian byte order。
 
-在 TCP/IP 中，addresses 用 network byte order 来表示，所有 applications 有时需要将 addresses 从 CPU 的 byte order 转换为 network byte order。例如，如果需要将一个 address 打印成 human-readable 的格式时，通常就需要转换成 network byte order。
+在 TCP/IP 中，addresses 用 network byte order（即 big-endian order）来表示，所有 applications 有时需要将 addresses 从 CPU 的 byte order 转换为 network byte order。例如，如果需要将一个 address 打印成 human-readable 的格式时，通常就需要转换成 network byte order。
 
 TCP/IP applications 可以使用下列的函数来在它们之间相互转换。
 
