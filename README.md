@@ -25,9 +25,9 @@ modem communication:
 13. - [x] Daemon Processes
 14. - [x] Advanced I/O
 15. - [x] Interprocess Communication
-16. - [ ] Network IPC: Sockets
+16. - [x] Network IPC: Sockets
 17. - [ ] Advanced IPC
 18. - [ ] Terminal I/O
 19. - [ ] Pseudo Terminals
-20. - [ ] A Database Library
+20. - [x] A Database Library
 21. - [ ] Communicating with a Network Printer
